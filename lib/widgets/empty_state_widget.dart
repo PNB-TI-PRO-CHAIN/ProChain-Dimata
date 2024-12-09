@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../views/add_category_view.dart';
 
 class EmptyStateWidget extends StatelessWidget {
   final String message;
@@ -29,8 +31,10 @@ class EmptyStateWidget extends StatelessWidget {
             style: TextStyle(fontSize: 14, color: const Color.fromARGB(255, 132, 129, 129)), 
           ),
           SizedBox(height: 16),
-          ElevatedButton.icon(
-            onPressed: onPressed,
+ElevatedButton.icon(
+            onPressed: () {
+              Get.to(() => AddCategoryView());
+            },
             icon: Icon(Icons.add, color: Colors.white), 
             label: Text(
               'Tambah',
@@ -40,11 +44,11 @@ class EmptyStateWidget extends StatelessWidget {
               backgroundColor: Color(0xFF5F3DC4), 
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10), 
+              ),
             ),
-            ),
-            )
-          ],
-        ),
-      );
-    }
+          )
+        ],
+      ),
+    );
+  }
 }
